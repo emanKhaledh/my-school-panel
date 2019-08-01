@@ -1,1 +1,1 @@
-# my-school-panel
+# schoolPanel

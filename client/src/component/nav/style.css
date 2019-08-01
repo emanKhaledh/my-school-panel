@@ -1,0 +1,30 @@
+.navbar-default {
+  border-color: #27A6BE;
+  
+  border: 1px solid #27A6BE; 
+  /* display: -webkit-flex; /* Safari */
+  /* -webkit-align-items: center  */
+   /* Safari 7.0+ */
+  display: flex;
+  align-items: center;
+  
+
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  text-align: right;
+
+  /* overflow-x: hidden; */
+  padding-top: 10px;
+  }
+  .navbar-default span{
+    width: 200px;
+    padding: 10px 0;
+
+    border-bottom: 1px solid #27A6BE;
+   
+
+  }
