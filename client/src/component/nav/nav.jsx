@@ -2,7 +2,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
-// import './style.css';
+import './style.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEdit } from '@fortawesome/free-solid-svg-icons'
+
 
 export default class NavElement extends React.Component {
   render() {
@@ -21,7 +24,10 @@ export default class NavElement extends React.Component {
     return (
 
       <NavLink to={link} isActive={handleActive} activeClassName="active" className="nav-link">
-        <a>
+   
+       <FontAwesomeIcon  icon={faEdit} className="icon-style"  />
+     
+       <a>
           {txt}
         </a>
       </NavLink>

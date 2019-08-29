@@ -1,0 +1,22 @@
+.btn--container-style-radio{
+  display: flex;
+  flex-direction: column;
+    align-items: flex-start;
+
+  
+}
+.btn--form-style-radio {
+  width: 30%;
+  padding: 5px 10px;
+  border-bottom: 1px solid gray;
+  font-size: 18px;
+  color: #821f66;
+  text-align: right
+}
+
+.btn--form-style-radio:hover {
+
+  border-bottom: 3px solid #821f66;
+  font-size: 19px;
+
+}

@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import NavElement from './nav';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
+import Background from './../img/sidebar-5.jpg';
+
+import FontAwesomeIcon from'react-fontawesome';
 
 class Nav extends Component {
   render() {
@@ -24,22 +27,22 @@ class Nav extends Component {
       {
         id: 4,
         txt: 'التعاميم',
-        link: '/c',
+        link: '/generalization',
       },
       {
         id: 5,
         txt: 'صادر و وارد النشاط',
-        link: '/exersice',
+        link: '/activities',
       },
       {
         id: 6,
         txt: 'منجزات المشاريع الوزارية',
-        link: '/project',
+        link: '/projects',
       },
       {
         id: 7,
         txt: 'الدعاية والاعلان',
-        link: '/contact',
+        link: '/advertising',
       },
       {
         id: 8,
@@ -51,15 +54,19 @@ class Nav extends Component {
         txt: 'ميزانية النشاط',
         link: '/pudjet',
       },
+    
     ];
     return (
-      <div id="wrapper">
-        <nav className="navbar bg-light navbar-default ">
+      <div >
+        <div className="sidebar" data-image={Background }>
+        
+        <nav className=" bg-light navbar-default ">
 
           <div className="sidebar-collapse">
 
             <div className="navbar-nav" id="side-menu">
-
+            <i className="fa fa-spinner fa-spin"></i>
+            <FontAwesomeIcon className= "fad fa-pen"/>
               {urlList.map(item => (
                 <span className="nav-item" key={item.id} id="side-menu">
                   <NavElement txt={item.txt} link={item.link} />
@@ -69,24 +76,13 @@ class Nav extends Component {
             </div>
           </div>
         </nav>
+        </div>
       </div>
     );
   }
 }
 
 
-{ /* <nav class="navbar bg-light">
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link 1</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link 2</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link 3</a>
-    </li>
-  </ul>
-</nav> */ }
+
 
 export default Nav;
