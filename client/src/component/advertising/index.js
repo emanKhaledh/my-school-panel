@@ -58,8 +58,7 @@ class Advertising extends Component {
   
   
     handleSubmit(event) {
-      console.log("statetitel",this.state.valueTitel );
-      console.log("statedes",this.state.valueDescription);
+  
             event.preventDefault();
       
             const inputsValues = {
