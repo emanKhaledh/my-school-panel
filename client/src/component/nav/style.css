@@ -1,6 +1,6 @@
 .navbar-default {
   /* border-color: #821f66; */
-  border: 1px solid #96909087;
+  /* border: 1px solid #96909087; */
   /* -webkit-align-items: center; */
   height: 100%;
   width: 250px;
@@ -9,7 +9,7 @@
   top: 0;
   right: 0;
   text-align: right;
-  padding-top: 90px
+  padding-top: 75px
   }
   .navbar-default span{
     width: 250px;
@@ -59,4 +59,27 @@ border-radius: 3px;
 .icon-style{
   padding-left: 10px;
   padding-top: 10px
+}
+.navbar-top {
+  overflow: hidden;
+  background-color: #f8f9fa;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+}
+
+.navbar-top a {
+  float: left;
+  display: block;
+  color: #821f66;
+  padding: 2px 28px;
+  text-decoration: none;
+  font-size: 29px;
+}
+
+.navbar-top a:hover{
+  color: #821f66;
+  text-decoration: none;
+
 }

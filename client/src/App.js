@@ -1,9 +1,9 @@
 
 
 import './App.css';
-import React, { Component } from 'react';
+import React from 'react';
 import {
-  BrowserRouter, Route, Switch, Redirect,
+  BrowserRouter, Route, Switch,
 } from 'react-router-dom';
 import SideNavPage from './component/nav/index';
 import Plan from './component/plan';
@@ -15,6 +15,7 @@ import Advertising from './component/advertising/index';
 import  Pudjet  from './component/pudjet/index';
  import UplodeFile from './component/file/index';
  import Radio from './component/radio/index';
+ import Homeicon  from './component/home/index'
 // import UplodeFile from './component/file/index'
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
       <div className="App">
       <SideNavPage />
       <Switch>
+   
        <Route path="/plan" component={Plan} />
        <Route path="/report" component={Report } />
        <Route path="/generalization" component={Generalization } />
@@ -31,8 +33,9 @@ function App() {
        <Route path="/advertising" component={Advertising} />
        <Route path="/pudjet" component={Pudjet} />
        <Route path="/file" component={UplodeFile} />
-       <Route path="/" component={Radio} />
+       <Route path="/radio" component={Radio} />
        <Route path="/file" component={UplodeFile} />
+       <Route path="/" component={Homeicon } />
       </Switch>
 
       </div>

@@ -17,7 +17,8 @@ class Plan extends Component {
         valueDescription:'',
         valueTitel:'',
         url:'',
-        show:false
+        show:false,
+        image:''
       };
   
       this.handleChange = this.handleChange.bind(this);

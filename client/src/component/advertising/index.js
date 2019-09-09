@@ -19,7 +19,7 @@ class Advertising extends Component {
         valueDescription:'',
         valueTitel:'',
         url:'',
-        show:false
+        show:false,   image:''
       };
   
       this.handleChange = this.handleChange.bind(this);
@@ -28,7 +28,8 @@ class Advertising extends Component {
   
     handleChange(event) {
       this.setState({[event.target.name]: event.target.value} );
-    }   handleChangeFile = e => {
+    }  
+     handleChangeFile = e => {
       if (e.target.files[0]) {
         const image = e.target.files[0];
         this.setState(() => ({image}));

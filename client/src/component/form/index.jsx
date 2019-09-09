@@ -12,28 +12,28 @@ const Form= ({
 }) => 
 (
 
-  <div class="container">
+  <div className="container">
     
     {/* <form  onSubmit={handleSubmit}> */}
 
-  <div class="rowEman">
-      <div class="col-25">
+  <div className="rowEman">
+      <div className="col-25">
         <label >{labelTitel}</label>
       </div>
-      <div class="col-75">
+      <div className="col-75">
          <input className="input--form-style" onChange={handleChange} value={valueTitel} name={nameTitel} placeholder="من فضلك العنوان.. "/>
       </div>
       </div>
-      <div class="rowEman">
-      <div class="col-25">
+      <div className="rowEman">
+      <div className="col-25">
          <label >  {label} </label>
       </div>
-      <div class="col-75">
+      <div className="col-75">
           <textarea className="input--form-style" placeholder={placeholder} onChange={handleChange} value={value} name={name}/>
       </div>
       </div>
       <div className="rowEman">
-      <div class="col-25">
+      <div className="col-25">
         <label >  اختر ملف للرفع</label>
       </div>
       <div className="col-50">
@@ -45,10 +45,8 @@ const Form= ({
         </button>
 
     </div>
-   {/* <input className="btn--form-style btn--radius-2 " type="submit" value='خزن'  onClick={this.handleInsertDB} /> */}
-   
-
-   <div class="rowEman x">
+ 
+   <div className="rowEman x">
    <input className="btn--form-style " type="submit" value={nameInput}  onClick={handleSubmit}/>
     </div>
     </div>
@@ -62,48 +60,3 @@ const Form= ({
 
 export default Form;
 
-{/* <div class="container">
-  <form action="/action_page.php">
-    <div class="row">
-      <div class="col-25">
-        <label for="fname">First Name</label>
-      </div>
-      <div class="col-75">
-        <input type="text" id="fname" name="firstname" placeholder="Your name..">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="lname">Last Name</label>
-      </div>
-      <div class="col-75">
-        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="country">Country</label>
-      </div>
-      <div class="col-75">
-        <select id="country" name="country">
-          <option value="australia">Australia</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option>
-        </select>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="subject">Subject</label>
-      </div>
-      <div class="col-75">
-        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-      </div>
-    </div>
-    <div class="row">
-      <input type="submit" value="Submit">
-    </div>
-  </form>
-</div>
-
-</body> */}

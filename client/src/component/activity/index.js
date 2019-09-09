@@ -22,7 +22,8 @@ class Activity extends Component {
         button1:false,
         button2:false,
         url:'',
-        show:false
+        show:false,
+        image:''
       };
   
       this.handleChange = this.handleChange.bind(this);
@@ -131,7 +132,7 @@ this.setState({button2:true,button1:false})
      
    
    <Form  handleChange={this.handleChange} placeholder={this.state.placeholder} nameInput='اضافة '
-   handleSubmit={this.handleSubmit} value={this.state.valueDescriptionOut} label='النشاط الصادر' labelTitel='عنوان  النشاط' valueTitel={this.state.valueTitelOut} nameTitel="valueTitelOut"   url={this.state.url} handleChangeFile={this.handleChangeFile} name="valueDescriptionOut"  handleUpload ={this.handleUpload }/>
+   handleSubmit={this.handleSubmit} value={this.state.valueDescriptionOut} label='صادر النشاط' labelTitel='عنوان  النشاط' valueTitel={this.state.valueTitelOut} nameTitel="valueTitelOut"   url={this.state.url} handleChangeFile={this.handleChangeFile} name="valueDescriptionOut"  handleUpload ={this.handleUpload }/>
          {this.state.show &&
    <SweetAlert
      show={this.state.show}
@@ -147,7 +148,7 @@ this.setState({button2:true,button1:false})
         <div className="menu-style">
 
  <Form  handleChange={this.handleChange} placeholder={this.state.placeholder} nameInput='اضافة '
-      handleSubmit={this.handleSubmit} value={this.state.valueDescriptionIn} label='النشاط الوارد'  labelTitel='عنوان النشاط' valueTitel={this.state.valueTitelIn}  nameTitel="valueTitelIn"   url={this.state.url} handleChangeFile={this.handleChangeFile} name="valueDescriptionIn"  handleUpload ={this.handleUpload }/>
+      handleSubmit={this.handleSubmit} value={this.state.valueDescriptionIn} label='وارد النشاط  '  labelTitel='عنوان النشاط' valueTitel={this.state.valueTitelIn}  nameTitel="valueTitelIn"   url={this.state.url} handleChangeFile={this.handleChangeFile} name="valueDescriptionIn"  handleUpload ={this.handleUpload }/>
             {this.state.show &&
       <SweetAlert
         show={this.state.show}

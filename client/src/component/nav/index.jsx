@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import NavElement from './nav';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
-import Background from './../img/sidebar-5.jpg';
+import  NavTop from './navTop.jsx'
+
 
 import FontAwesomeIcon from'react-fontawesome';
 
@@ -12,7 +13,7 @@ class Nav extends Component {
       {
         id: 1,
         txt: 'الاذاعة الدراسية',
-        link: '/',
+        link: '/radio',
       },
       {
         id: 2,
@@ -58,14 +59,15 @@ class Nav extends Component {
     ];
     return (
       <div >
-        <div className="sidebar" data-image={Background }>
+        < NavTop />
+        <div className="sidebar" >
         
         <nav className=" bg-light navbar-default ">
 
           <div className="sidebar-collapse">
 
             <div className="navbar-nav" id="side-menu">
-            <i className="fa fa-spinner fa-spin"></i>
+  
             <FontAwesomeIcon className= "fad fa-pen"/>
               {urlList.map(item => (
                 <span className="nav-item" key={item.id} id="side-menu">

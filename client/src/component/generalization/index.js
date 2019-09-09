@@ -16,7 +16,8 @@ class Generalization extends Component {
         valueDescription:'',
         valueTitel:'',
         show:false,
-        url:''
+        url:'',
+        image:''
       };
   
       this.handleChange = this.handleChange.bind(this);

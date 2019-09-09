@@ -2,9 +2,10 @@
 
 .main {
   margin-right: 250px; /* Same as the width of the sidenav */
-  margin-top: 0;
+
   font-size: 33px; /* Increased text to enable scrolling */
-  padding: 20px 10px;
+  padding: 20px 25px;
+  margin-top: 30px;
 }
 
 

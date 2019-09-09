@@ -10,7 +10,9 @@ const activities = require('./activities');
 const projects = require('./projects.js');
 const advertising = require('./advertising');
 const pudjet = require('./pudjet');
-const file = require('./file')
+const file = require('./file');
+const radioSubject = require('./radio');
+const radioName = require('./radioName')
 
 
 router.post('/api/plan', plan.post);
@@ -21,6 +23,8 @@ router.post('/api/projects', projects.post);
 router.post('/api/advertising', advertising.post);
 router.post('/api/pudjet', pudjet.post);
 router.post('/api/file', file.post);
+router.post('/api/radioSubject', radioSubject.post);
+router.post('/api/radioName',radioName.post)
 
 
 module.exports = router;

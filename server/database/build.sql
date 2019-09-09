@@ -1,8 +1,21 @@
 BEGIN;
-DROP TABLE IF EXISTS plans,reports,generalization,activity,achievements,advertising,budget,fileuplode;
+DROP TABLE IF EXISTS plans,reports,generalization,activity,achievements,advertising,budget,fileuplode,nameteach,radio;
 
+CREATE TABLE "radio" (
+  "id" serial NOT NULL,
+	"title" varchar(30),
+	"description" varchar(2000)  ,
+  "link" varchar(9000)  ,
+  CONSTRAINT radio_pk PRIMARY KEY ("id")
+);
 
-
+CREATE TABLE "nameteach" (
+  "id" serial NOT NULL,
+	"name" varchar(30),
+	"date" date,
+    "link" varchar(9000),
+  CONSTRAINT nameteach_pk PRIMARY KEY ("id")
+);
 
 
 CREATE TABLE "plans" (
@@ -56,12 +69,16 @@ CREATE TABLE "fileuplode" (
 	"link" varchar(9000)  ,
   CONSTRAINT fileuplode_pk PRIMARY KEY ("id")
 );
+
 CREATE TABLE "budget" (
   "id" serial NOT NULL,
-	"title" varchar(30),
-	"description" varchar(2000) ,
+	"out_title" varchar(30) ,
+	"out_description" varchar(900) ,
+  "received_title" varchar(30) ,
+	"received_description" varchar(900) ,
+  "link" varchar(9000)  ,
+
   CONSTRAINT budget_pk PRIMARY KEY ("id")
 );
-
 
 COMMIT;

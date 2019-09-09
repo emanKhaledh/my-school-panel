@@ -2,12 +2,10 @@ const {pudjetInsert} = require('./../database/queries/insert.js');
 
 exports.post = (req, res) => {
 
-  
+  console.log("ee pudjet",req.body);
 
-  console.log("ee report",req.body);
-
-  const {pudjetSchool, pudjetWork} = req.body;
-  pudjetInsert(pudjetSchool, pudjetWork,(error, result) => {
+  const {valueTitelOut, valueDescriptionOut,valueTitelIn,valueDescriptionIn,url} = req.body;
+  pudjetInsert(valueTitelOut, valueDescriptionOut,valueTitelIn,valueDescriptionIn,url,(error, result) => {
     if (error) {
       console.log("errdb",error);
       
@@ -20,3 +18,4 @@ exports.post = (req, res) => {
   });
   
   }
+ 

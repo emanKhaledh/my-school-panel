@@ -1,0 +1,27 @@
+.flex-icon {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+
+}
+
+.flex-icon > div {
+  background-color: #f1f1f1;
+  width: 25%;
+  margin: 10px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 29px;
+  margin-right: 45px;
+  color: #821f66;
+  border-radius: 1px;
+  border: 1px solid #c4c1c1
+}
+.link--color:hover{
+  color: #821f66;
+  text-decoration: none;
+
+}
+.link--color{
+  color: #821f66;
+}

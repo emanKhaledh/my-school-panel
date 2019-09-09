@@ -1,5 +1,34 @@
 const connection = require('./../db_connection');
 
+const radioInsert = (titel, description,url,cb) => {
+  const sql = {
+    text: 'INSERT INTO radio(title, description,link) VALUES($1,$2,$3) RETURNING *',
+    values: [titel, description,url],
+  };
+  connection.query(sql, (err, res) => {
+    if (err) cb(err);
+    else {  
+      cb(null, res.rows);
+    }
+  });
+};
+
+
+
+
+const radioInsertName = (TeacName,startDate,url,cb) => {
+  const sql = {
+    text: 'INSERT INTO nameteach(name, date,link) VALUES($1,$2,$3) RETURNING *',
+    values: [TeacName,startDate,url],
+  };
+  connection.query(sql, (err, res) => {
+    if (err) cb(err);
+    else {  
+      cb(null, res.rows);
+    }
+  });
+};
+
 const planInsert = (titel, description,url,cb) => {
   const sql = {
     text: 'INSERT INTO plans(title, description,link) VALUES($1,$2,$3) RETURNING *',
@@ -76,11 +105,13 @@ const advertisingInsert = (titel, description,link,cb) => {
   });
 };
 
-const  pudjetInsert= (pudjetSchool, pudjetWork,cb) => {
+const  pudjetInsert= (valueTitelOut, valueDescriptionOut,valueTitelIn,valueDescriptionIn,url,cb) => {
+
   const sql = {
-    text: 'INSERT INTO budget(title, description) VALUES($1,$2) RETURNING *',
-    values: [pudjetSchool, pudjetWork],
+    text: 'INSERT INTO  budget(out_title, out_description,received_title,received_description,link) VALUES($1,$2,$3,$4,$5)RETURNING * ',
+    values: [valueTitelOut, valueDescriptionOut,valueTitelIn,valueDescriptionIn,url],
   };
+
   connection.query(sql, (err, res) => {
     if (err) cb(err);
     else {  
@@ -105,5 +136,5 @@ const  fileInsert= (link,cb) => {
 
 
 
-module.exports = {planInsert,reportInsert,generalizationInsert ,activitiesInsert,projectInsert,advertisingInsert,pudjetInsert,fileInsert} ;
+module.exports = {planInsert,reportInsert,generalizationInsert ,activitiesInsert,projectInsert,advertisingInsert,pudjetInsert,fileInsert,radioInsert,radioInsertName} ;
 

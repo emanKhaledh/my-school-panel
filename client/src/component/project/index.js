@@ -12,11 +12,12 @@ class Project extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        titel:'',
+        
         placeholder:'من فضلك ادخل التقرير',
         valueDescription:'',
         valueTitel:'',
-        url:''
+        url:'',
+        image:''
       };
   
       this.handleChange = this.handleChange.bind(this);
@@ -91,6 +92,8 @@ class Project extends Component {
     }
   
     render() {
+      console.log("stattt",this.state);
+      
       return (  <div className=" main page-wrapper bg-gra-02 p-t-80 p-b-100 font-poppins">
       <div className="wrapper wrapper--w780">
   

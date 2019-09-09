@@ -6,8 +6,8 @@ exports.post = (req, res) => {
 
   console.log("ee report",req.body);
 
-  const {titel, description ,link} = req.body;
-  projectInsert(titel, description,link,(error, result) => {
+  const {titel, description ,url} = req.body;
+  projectInsert(titel, description,url,(error, result) => {
     if (error) {
       console.log("errdb",error);
       

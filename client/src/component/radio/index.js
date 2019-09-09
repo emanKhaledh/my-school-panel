@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Form from './../form/index';
-import ButtonRadio from './button'
+import ButtonRadio from './button.js'
 
 
 class Radio extends Component {
@@ -9,17 +8,9 @@ class Radio extends Component {
       super(props);
       this.state = {
         titel:'',
-        placeholder: 'من فضلك ادخل الخطة',
-        valueDescriptionOut:'',
-        valueTitelOut:'',
-        valueDescriptionIn:'',
-        valueTitelIn:'',
         button1:false,
-        button2:false
+        button2:false,
       };
-  
-      // this.handleChange = this.handleChange.bind(this);
-      // this.handleSubmit = this.handleSubmit.bind(this);
      
     }
 

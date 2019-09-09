@@ -27,9 +27,10 @@ export default class NavElement extends React.Component {
    
        <FontAwesomeIcon  icon={faEdit} className="icon-style"  />
      
-       <a>
+     
           {txt}
-        </a>
+      
+      
       </NavLink>
 
 
