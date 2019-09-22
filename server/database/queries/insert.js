@@ -66,11 +66,12 @@ const generalizationInsert = (titel, description,url,cb) => {
     }
   });
 };
+// ,valueTitelIn,valueDescriptionIn
 
-const activitiesInsert = (valueTitelOut, valueDescriptionOut,valueTitelIn,valueDescriptionIn,url,cb) => {
+const activitiesOutInsert = (valueTitelOut, valueDescriptionOut,url,cb) => {
   const sql = {
-    text: 'INSERT INTO activity(out_title, out_description,received_title,received_description,link) VALUES($1,$2,$3,$4,$5)RETURNING * ',
-    values: [valueTitelOut, valueDescriptionOut,valueTitelIn,valueDescriptionIn,url],
+    text: 'INSERT INTO activity(title, description,link) VALUES($1,$2,$3) RETURNING * ',
+    values: [valueTitelOut, valueDescriptionOut,url],
   };
   connection.query(sql, (err, res) => {
     if (err) cb(err);
@@ -79,6 +80,20 @@ const activitiesInsert = (valueTitelOut, valueDescriptionOut,valueTitelIn,valueD
     }
   });
 };
+
+const activitiesInInsert = (valueTitelIn,valueDescriptionIn,url,cb) => {
+  const sql = {
+    text: 'INSERT INTO activities(title, description,link) VALUES($1,$2,$3) RETURNING * ',
+    values: [valueTitelIn,valueDescriptionIn,url],
+  };
+  connection.query(sql, (err, res) => {
+    if (err) cb(err);
+    else {  
+      cb(null, res.rows);
+    }
+  });
+};
+
 
 const projectInsert = (titel, description,link,cb) => {
   const sql = {
@@ -136,5 +151,5 @@ const  fileInsert= (link,cb) => {
 
 
 
-module.exports = {planInsert,reportInsert,generalizationInsert ,activitiesInsert,projectInsert,advertisingInsert,pudjetInsert,fileInsert,radioInsert,radioInsertName} ;
+module.exports = {planInsert,reportInsert,generalizationInsert ,projectInsert,activitiesOutInsert,activitiesInInsert ,pudjetInsert,fileInsert,radioInsert,radioInsertName ,advertisingInsert} ;
 

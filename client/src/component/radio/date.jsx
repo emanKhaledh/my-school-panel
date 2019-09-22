@@ -1,10 +1,10 @@
 import React from 'react';
-import 'moment/locale/es.js';
-import 'rc-datepicker/lib/style.css';
+// import 'moment/locale/es.js';
+// import 'rc-datepicker/lib/style.css';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
+// import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
 import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons'
 
 

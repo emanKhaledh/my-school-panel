@@ -1,15 +1,16 @@
-const {radioInsert} = require('./../database/queries/insert.js');
-const {radioSelect} = require('./../database/queries/select.js');
+const {activitiesOutInsert } = require('./../database/queries/insert.js');
+const {activitOutSelect } = require('./../database/queries/select.js')
+
 
 exports.get = (req,res) =>{
 
-  radioSelect((error, result) => {
+  activitOutSelect((error, result) => {
     if (error) {
       console.log("errin select ",error);
       
       res.send({ error });
     } else if  (!result.length){
-      res.send({ msg: 'لايوجد ملفات مرفوعة بقسم الاذاعة' });
+      res.send({ msg: 'لايوجد ملفات مرفوعة بقسم النشاطات الصادرة' });
     }else {
       console.log("result select ",result);
       
@@ -18,11 +19,13 @@ exports.get = (req,res) =>{
   });
 }
 
-exports.post = (req, res) => {
-  console.log("ee",req.body);
 
-  const {titel, description,url} = req.body;
-  radioInsert(titel, description,url,(error, result) => {
+exports.post = (req, res) => {
+
+  console.log("ee activity",req.body);
+
+  const {valueTitelOut, valueDescriptionOut,url} = req.body;
+  activitiesOutInsert(valueTitelOut, valueDescriptionOut,url,(error, result) => {
     if (error) {
       console.log("errdb",error);
       
@@ -35,4 +38,4 @@ exports.post = (req, res) => {
   });
   
   }
-
+ 

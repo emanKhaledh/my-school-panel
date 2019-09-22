@@ -1,5 +1,5 @@
 BEGIN;
-DROP TABLE IF EXISTS plans,reports,generalization,activity,achievements,advertising,budget,fileuplode,nameteach,radio;
+DROP TABLE IF EXISTS plans,reports,generalization,achievements,advertising,budget,fileuplode,nameteach,radio,activity,activities;
 
 CREATE TABLE "radio" (
   "id" serial NOT NULL,
@@ -39,16 +39,6 @@ CREATE TABLE "generalization" (
   "link" varchar(9000)  ,
   CONSTRAINT generalization_pk PRIMARY KEY ("id")
 );
-CREATE TABLE "activity" (
-  "id" serial NOT NULL,
-	"out_title" varchar(30) ,
-	"out_description" varchar(900) ,
-  "received_title" varchar(30) ,
-	"received_description" varchar(900) ,
-  "link" varchar(9000)  ,
-
-  CONSTRAINT activity_pk PRIMARY KEY ("id")
-);
 
 CREATE TABLE "achievements" (
   "id" serial NOT NULL,
@@ -79,6 +69,22 @@ CREATE TABLE "budget" (
   "link" varchar(9000)  ,
 
   CONSTRAINT budget_pk PRIMARY KEY ("id")
+);
+CREATE TABLE "activity" (
+  "id" serial NOT NULL,
+	"title" varchar(30) ,
+	"description" varchar(900) ,
+  "link" varchar(9000)  ,
+
+  CONSTRAINT activity_pk PRIMARY KEY ("id")
+);
+CREATE TABLE "activities" (
+  "id" serial NOT NULL,
+	"title" varchar(30) ,
+	"description" varchar(900) ,
+  "link" varchar(9000)  ,
+
+  CONSTRAINT activities_pk PRIMARY KEY ("id")
 );
 
 COMMIT;

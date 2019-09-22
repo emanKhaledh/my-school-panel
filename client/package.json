@@ -6,20 +6,15 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.21",
     "@fortawesome/free-solid-svg-icons": "^5.10.1",
     "@fortawesome/react-fontawesome": "^0.1.4",
-    "@mobiscroll/cli": "^1.1.1",
-    "@mobiscroll/react": "https://npm.mobiscroll.com/@mobiscroll/react-trial/-/react-trial-4.8.0.tgz",
-    "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
-    "cloudinary-react": "^1.1.4",
     "firebase": "^6.4.0",
-    "rc-datepicker": "^5.0.14",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.10",
-    "react-datepicker": "^2.9.3",
+    "react-datepicker": "^2.9.6",
     "react-dom": "^16.8.6",
     "react-fontawesome": "^1.6.1",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1",
+    "react-scripts": "^3.0.1",
     "sweetalert2": "^8.16.3",
     "sweetalert2-react": "^0.8.3"
   },
@@ -30,9 +25,6 @@
     "eject": "react-scripts eject"
   },
   "proxy": "http://localhost:8080",
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "browserslist": {
     "production": [
       ">0.2%",

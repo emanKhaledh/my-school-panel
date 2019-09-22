@@ -13,7 +13,8 @@ export default class NavTop extends React.Component {
       <div className="navbar-top">
 
 
- <a href="#home">الرئيسية</a>
+ <a href="/">الرئيسية</a>
+ {/* <NavLink to='/'  className="nav-link">  */}
 
       </div>
 

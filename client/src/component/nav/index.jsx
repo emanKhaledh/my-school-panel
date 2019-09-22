@@ -13,47 +13,47 @@ class Nav extends Component {
       {
         id: 1,
         txt: 'الاذاعة الدراسية',
-        link: '/radio',
+        link: '/admin/radio',
       },
       {
         id: 2,
         txt: 'الخطط',
-        link: '/plan',
+        link: '/admin/plan',
       },
       {
         id: 3,
         txt: 'التقارير',
-        link: '/report',
+        link: '/admin/report',
       },
       {
         id: 4,
         txt: 'التعاميم',
-        link: '/generalization',
+        link: '/admin/generalization',
       },
       {
         id: 5,
         txt: 'صادر و وارد النشاط',
-        link: '/activities',
+        link: '/admin/activities',
       },
       {
         id: 6,
         txt: 'منجزات المشاريع الوزارية',
-        link: '/projects',
+        link: '/admin/projects',
       },
       {
         id: 7,
         txt: 'الدعاية والاعلان',
-        link: '/advertising',
+        link: '/admin/advertising',
       },
       {
         id: 8,
         txt: 'ملف انجاز دائرة النشاط',
-        link: '/file',
+        link: '/admin/file',
       },
       {
         id: 9,
         txt: 'ميزانية النشاط',
-        link: '/pudjet',
+        link: '/admin/pudjet',
       },
     
     ];

@@ -27,7 +27,8 @@ class Activity extends Component {
       };
   
       this.handleChange = this.handleChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleSubmitOut = this.handleSubmitOut.bind(this);
+      this.handleSubmitIn = this.handleSubmitIn.bind(this);
      
     }
 
@@ -72,20 +73,18 @@ this.setState({button2:true,button1:false})
     }
   
   
-    handleSubmit(event) {
+    handleSubmitIn(event) {
    
             event.preventDefault();
       
             const inputsValues = {
-              valueDescriptionOut:this.state.valueDescriptionOut,
-              valueTitelOut:this.state.valueTitelOut,
               valueDescriptionIn:this.state.valueDescriptionIn,
               valueTitelIn:this.state.valueTitelIn,
               url:this.state.url
             };
            
   
-            var url = '/api/activities';
+            var url = '/api/activityIn';
          
             
             fetch(url, {
@@ -99,8 +98,7 @@ this.setState({button2:true,button1:false})
               if (response.ok ) {
        
              this.setState({
-              valueDescriptionOut:'',
-              valueTitelOut:'',
+            
               valueDescriptionIn:'',
               valueTitelIn:'',
               show:true,
@@ -116,7 +114,49 @@ this.setState({button2:true,button1:false})
             .catch(error => console.error('Error:', error));
       
     }
-  
+    handleSubmitOut(event) {
+   
+      event.preventDefault();
+
+      const inputsValues = {
+        valueDescriptionOut:this.state.valueDescriptionOut,
+        valueTitelOut:this.state.valueTitelOut,
+      
+        url:this.state.url
+      };
+     
+
+      var url = '/api/activityOut';
+   
+      
+      fetch(url, {
+        method: 'POST', // or 'PUT'
+        body: JSON.stringify(inputsValues), // data can be `string` or {object}!
+        headers:{
+          'Content-Type': 'application/json'
+        }
+      }).then(res => res.json())
+      .then(response => {
+        if (response.ok ) {
+ 
+       this.setState({
+        valueDescriptionOut:'',
+        valueTitelOut:'',
+    
+        show:true,
+        url:''
+      });
+        }
+        else{
+         
+      alert("حدث خط ما " + response)
+        }
+        console.log('Success:', JSON.stringify(response))
+      })
+      .catch(error => console.error('Error:', error));
+
+}
+
     render() {
       return (  <div className=" main page-wrapper bg-gra-02 p-t-80 p-b-100 font-poppins">
       <div className="wrapper wrapper--w780">
@@ -132,7 +172,7 @@ this.setState({button2:true,button1:false})
      
    
    <Form  handleChange={this.handleChange} placeholder={this.state.placeholder} nameInput='اضافة '
-   handleSubmit={this.handleSubmit} value={this.state.valueDescriptionOut} label='صادر النشاط' labelTitel='عنوان  النشاط' valueTitel={this.state.valueTitelOut} nameTitel="valueTitelOut"   url={this.state.url} handleChangeFile={this.handleChangeFile} name="valueDescriptionOut"  handleUpload ={this.handleUpload }/>
+   handleSubmit={this.handleSubmitOut} value={this.state.valueDescriptionOut} label='صادر النشاط' labelTitel='عنوان  النشاط' valueTitel={this.state.valueTitelOut} nameTitel="valueTitelOut"   url={this.state.url} handleChangeFile={this.handleChangeFile} name="valueDescriptionOut"  handleUpload ={this.handleUpload }/>
          {this.state.show &&
    <SweetAlert
      show={this.state.show}
@@ -148,7 +188,7 @@ this.setState({button2:true,button1:false})
         <div className="menu-style">
 
  <Form  handleChange={this.handleChange} placeholder={this.state.placeholder} nameInput='اضافة '
-      handleSubmit={this.handleSubmit} value={this.state.valueDescriptionIn} label='وارد النشاط  '  labelTitel='عنوان النشاط' valueTitel={this.state.valueTitelIn}  nameTitel="valueTitelIn"   url={this.state.url} handleChangeFile={this.handleChangeFile} name="valueDescriptionIn"  handleUpload ={this.handleUpload }/>
+      handleSubmit={this.handleSubmitIn} value={this.state.valueDescriptionIn} label='وارد النشاط  '  labelTitel='عنوان النشاط' valueTitel={this.state.valueTitelIn}  nameTitel="valueTitelIn"   url={this.state.url} handleChangeFile={this.handleChangeFile} name="valueDescriptionIn"  handleUpload ={this.handleUpload }/>
             {this.state.show &&
       <SweetAlert
         show={this.state.show}

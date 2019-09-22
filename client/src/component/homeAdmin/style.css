@@ -1,17 +1,17 @@
-.flex-icon {
+.flex-icon-admin {
   display: flex;
   flex-wrap: wrap;
   align-content: space-around;
 
 }
 
-.flex-icon > div {
+.flex-icon-admin > div {
   background-color: #f1f1f1;
   width: 25%;
   margin: 10px;
   text-align: center;
-  line-height: 50px;
-  font-size: 29px;
+  line-height: 40px;
+  font-size: 30px;
   margin-right: 45px;
   color: #821f66;
   border-radius: 1px;
