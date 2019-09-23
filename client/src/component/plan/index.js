@@ -79,7 +79,7 @@ class Plan extends Component {
             .then(response => {
               if (response.ok ) {
                 this.setState({show:true,valueDescription:'',url:'',valueTitel:''})
-            //  alert("تم اضافة الخطة ")
+          
               }
               else{
                

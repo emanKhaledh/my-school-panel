@@ -3,6 +3,7 @@ import './index.css';
 import Result from './../homeWeb/result';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faUserCog} from '@fortawesome/free-solid-svg-icons';
+import imageCover from './../../img/learn-cover.jpg'
 
 
 
@@ -25,7 +26,7 @@ class Home extends Component {
 
   clickLink = (e)=>{
 this.setState({url:e.target.value},()=>{
-  fetch(`api/${this.state.url}`, {
+  fetch(`/api/${this.state.url}`, {
     credentials: 'same-origin',
     method: 'GET',
   }).then(res=>res.json())
@@ -44,42 +45,46 @@ this.setState({url:e.target.value},()=>{
 
     render() {
     return (  <div className="  page-wrapper bg-gra-02  font-poppins">
-      <div className="wrapper ">
 
-<div className="bg-imgWeb">
+      <div className="">
+      <div className="bg-imgWeb">
+<img  src={imageCover} alt="dddddddddddddd"/>
+</div>
+
   <div className="containerWeb">
     <div className="topnavWeb">
-    <button onClick={this.clickLink} value="/radioSubject">
+    <button onClick={this.clickLink} value="radioSubject">
   الاذاعة المدرسية
   </button>
-  <button onClick={this.clickLink} value="/radioName">
+
+  <button onClick={this.clickLink} value="radioName">
   جدول توزيع المشرفات 
   </button>
-  <button  onClick={this.clickLink} value="/plan">  
+  <button  onClick={this.clickLink} value="plan">  
   الخطط
    </button>
-   <button onClick={this.clickLink} value="/report">
+   <button onClick={this.clickLink} value="report">
     التقارير
    </button>
-   <button onClick={this.clickLink} value="/generalization">
+   <button onClick={this.clickLink} value="generalization">
   التعاميم
 </button >
-<button onClick={this.clickLink} value="/activityOut">
+<button onClick={this.clickLink} value="activityOut">
   صادرالنشاط
   </button>
-  <button onClick={this.clickLink} value="/activityIn">
+  <button onClick={this.clickLink} value="activityIn">
  وارد النشاط
   </button>
-  <button onClick={this.clickLink} value="/projects">
+  <button onClick={this.clickLink} value="projects">
   منجزات المشاريع الوزارية
   </button >
-  <button onClick={this.clickLink} value="/advertising"> 
+  <button onClick={this.clickLink} value="advertising"> 
   الدعاية والاعلان
   </button>
-  <button onClick={this.clickLink} value="/file">
+  <button onClick={this.clickLink} value="file">
   ملف انجاز دائرة النشاط
   </button>
-  <button  onClick={this.clickLink} value="/pudjet">
+  <button  onClick={this.clickLink} value="pudjet">
    ميزانية النشاط 
   </button>
   <a href="/admin"  className="topnavWeb-icon"><FontAwesomeIcon   icon={faUserCog} className="icon-style"  /></a>
@@ -95,7 +100,7 @@ this.setState({url:e.target.value},()=>{
 
 
      
-        </div> 
+       
         </div>);
     }
   }
