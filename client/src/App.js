@@ -24,7 +24,8 @@ function App() {
     <BrowserRouter>
   
       <div className="App">    
-      {window.location.pathname === '/admin' && <SideNavPage /> }
+      {window.location.pathname.
+        includes ('/admin') && <SideNavPage /> }
       <Switch>
   
 
