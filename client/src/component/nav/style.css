@@ -9,7 +9,8 @@
   top: 0;
   right: 0;
   text-align: right;
-  padding-top: 75px
+  padding-top: 75px;
+  background-color: #f8f9fa;
   }
   .navbar-default span{
     width: 250px;

@@ -3,7 +3,7 @@ import './index.css';
 import Result from './../homeWeb/result';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faUserCog} from '@fortawesome/free-solid-svg-icons';
-import imageCover from './../../img/learn-cover.jpg'
+import imageCover from './../../img/b.jpg'
 
 
 
@@ -44,12 +44,11 @@ this.setState({url:e.target.value},()=>{
   }
 
     render() {
-    return (  <div className="  page-wrapper bg-gra-02  font-poppins">
+      // className="  page-wrapper bg-gra-02  font-poppins"red
+    return (  <div >
 
-      <div className="">
-      <div className="bg-imgWeb">
-<img  src={imageCover} alt="dddddddddddddd"/>
-</div>
+     
+
 
   <div className="containerWeb">
     <div className="topnavWeb">
@@ -92,13 +91,18 @@ this.setState({url:e.target.value},()=>{
 
  
   </div>
+  <div className="containerWeb1">
+      {/* <div className="bg-imgWeb"> */}
+<img  src={imageCover} alt="dddddddddddddd" style={{width:'100%'}}/>
+
+  <div class="content">
+  <div style={{textAlign: 'center',
+    color: '#f2f2f2'}}> <h1>المواضيع</h1></div>
+{this.state.url && <Result  result={this.state.result} resultStatus={this.state.resultStatus} msg={this.state.msg}/>}
 </div>
 
-  <div style={{textAlign: 'center',
-    color: '#ffffff'}}> <h1>المواضيع</h1></div>
-{this.state.url && <Result  result={this.state.result} resultStatus={this.state.resultStatus} msg={this.state.msg}/>}
-
-
+</div>
+{/* </div> */}
      
        
         </div>);
@@ -107,6 +111,10 @@ this.setState({url:e.target.value},()=>{
 
 
 export default Home ;
+
+
+
+
 
 
 

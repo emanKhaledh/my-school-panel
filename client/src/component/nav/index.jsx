@@ -62,7 +62,7 @@ class Nav extends Component {
         < NavTop />
         <div className="sidebar" >
         
-        <nav className=" bg-light navbar-default ">
+        <nav className=" navbar-default ">
 
           <div className="sidebar-collapse">
 
