@@ -17,9 +17,10 @@ const planSelect = (cb) => {
   });
 };
 
-const radioSelect = (cb) => {
+const radioSelect = (id,cb) => {
   const sql = {
-    text: 'SELECT * from  radio',
+    text: 'SELECT * from  radio where nosection = $1',
+    values:[id]
   };
   connection.query(sql, (err, res) => {
     if (err) {
@@ -146,4 +147,20 @@ const activitInSelect = (cb) => {
   });
 };
 
-module.exports = {planSelect,radioSelect,reportsSelect,generalSelect ,achievementsSelect ,advertisingSelect,budgetSelect,radioSelectName ,activitOutSelect , activitInSelect  }
+const fileSelect = (cb) => {
+  const sql = {
+    text: 'SELECT * from  fileuplode',
+  };
+  connection.query(sql, (err, res) => {
+    if (err) {
+      console.log("err DB",err);
+      
+      cb(err);
+    }
+    else {  
+      cb(null, res.rows);
+    }
+  });
+};
+
+module.exports = {planSelect,radioSelect,reportsSelect,generalSelect ,achievementsSelect ,advertisingSelect,budgetSelect,radioSelectName ,activitOutSelect , activitInSelect ,fileSelect }

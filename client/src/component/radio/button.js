@@ -78,7 +78,8 @@ handleSubmitNameTeac=(event)=>{
   const inputsValues = {
     startDate: this.state.startDate,
     TeacName: this.state.TeacName,
-    url:this.state.url
+    url:this.state.url,
+    nosection:this.props.nosection
   };
 
   var url = '/api/radioName';
@@ -107,7 +108,8 @@ handleSubmit=(event) =>{
         const inputsValues = {
           titel: this.state.valueTitel,
           description: this.state.valueDescription,
-          url:this.state.url
+          url:this.state.url,
+          nosection:this.props.nosection
         };
 
         var url = '/api/radioSubject';

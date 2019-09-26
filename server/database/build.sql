@@ -6,6 +6,7 @@ CREATE TABLE "radio" (
 	"title" varchar(30),
 	"description" varchar(2000)  ,
   "link" varchar(9000)  ,
+  "nosection" varchar(10),
   CONSTRAINT radio_pk PRIMARY KEY ("id")
 );
 
@@ -14,6 +15,7 @@ CREATE TABLE "nameteach" (
 	"name" varchar(30),
 	"date" date,
     "link" varchar(9000),
+     "nosection" varchar(10),
   CONSTRAINT nameteach_pk PRIMARY KEY ("id")
 );
 

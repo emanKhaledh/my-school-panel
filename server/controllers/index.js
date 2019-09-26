@@ -33,8 +33,9 @@ router.get('/api/advertising', advertising.get);
 router.post('/api/pudjet', pudjet.post);
 router.get('/api/pudjet', pudjet.get);
 router.post('/api/file', file.post);
+router.get('/api/file', file.get);
 router.post('/api/radioSubject', radioSubject.post);
-router.get('/api/radioSubject', radioSubject.get);
+router.get('/api/radioSubject/:id', radioSubject.get);
 router.post('/api/radioName',radioName.post);
 router.get('/api/radioName',radioName.get)
 

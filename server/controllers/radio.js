@@ -2,8 +2,10 @@ const {radioInsert} = require('./../database/queries/insert.js');
 const {radioSelect} = require('./../database/queries/select.js');
 
 exports.get = (req,res) =>{
-
-  radioSelect((error, result) => {
+  console.log("radio",req.params.id);
+  
+const {id} = req.params
+  radioSelect(id,(error, result) => {
     if (error) {
       console.log("errin select ",error);
       
@@ -19,10 +21,10 @@ exports.get = (req,res) =>{
 }
 
 exports.post = (req, res) => {
-  console.log("ee",req.body);
+  console.log("ee radio",req.body);
 
-  const {titel, description,url} = req.body;
-  radioInsert(titel, description,url,(error, result) => {
+  const {titel, description,url,nosection} = req.body;
+  radioInsert(titel, description,url,nosection,(error, result) => {
     if (error) {
       console.log("errdb",error);
       

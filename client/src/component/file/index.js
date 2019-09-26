@@ -1,7 +1,11 @@
 import React, {Component} from 'react';
 import {storage} from './../../firebase';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons';
+import { withSwalInstance } from 'sweetalert2-react';
+import swal from 'sweetalert2';
+ 
+const SweetAlert = withSwalInstance(swal);
 
 
 class UplodeFile extends Component {
@@ -10,7 +14,8 @@ class UplodeFile extends Component {
     this.state = {
       image: [],
       url: '',
-      progress: 0
+      progress: 0,
+      show: false
     }
     this.handleChange = this
       .handleChange
@@ -58,14 +63,20 @@ fetch('/api/file', {
   }
 }).then(res => res.json())
 .then(response => {
-  if(response.ok === 'error'){
-    console.log("err",response.error);
+  // if(response.ok === 'error'){
+  //   console.log("err",response.error);
     
-  }else{
-    console.log('Success:', JSON.stringify(response.result))
-  }
+  // }else{
+    if (response.ok === 'Success' ) {
+      this.setState({show:true})
+    }
+    else{
+     
+  alert("حدث خط ما " + response)
+    }
+    console.log('Success:', JSON.stringify(response))
+  })
 
-})
 .catch(error => console.error('Error:', error));
     
     
@@ -110,6 +121,15 @@ fetch('/api/file', {
           <div class="rowEman x">
    <input className="btn--form-style" type="submit" value='حفظ'  onClick={this.handleInsertDB} style={{    marginLeft: '118px'}}/>
     </div>
+    {this.state.show &&
+      <SweetAlert
+        show={this.state.show}
+        title="الاعلان"
+        text="تم اضافة الاعلان"
+
+        onConfirm={() => this.setState({ show: false })}
+      />
+  }
      
      
       </div>

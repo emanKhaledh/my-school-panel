@@ -39,19 +39,33 @@ class Result extends Component {
 </div>
    }
     {resultStatus === 'date' && 
-     <div className="flex-container-home">
-    {result.map(item => (  <div key={item.id} className="card-home">
-  {/* <img src={bookmark} alt="Avatar" style={{width:'90px',height:'90px'}}/> */}
-  <div className="container-home">
-  <a href={item.link} >this</a>
-    <h2>{item.name}</h2> 
-    <p>{item.date}</p> 
-  </div>
-</div>
-                
- ))}
+   <div className="flex-container-home">
+ 
+     <table style={{width:'70%'}}>
+     <tbody>
+  <tr>
+    <th>الاسم</th>
+    <th>التاريخ</th> 
+    <th>الملف</th>
+   
+    
+  </tr>
+  {result.map(item => (  <tr key={item.id} >
+    <td>{item.name}</td>
+    <td>{item.date}</td>
+  <td>   {item.link &&  <a  className="icon-down" href={item.link} ><FontAwesomeIcon   icon={faFileDownload}   /></a>}</td>
+  
+  
+  </tr>
 
+
+  )
+)}
+    </tbody>
+</table>
 </div>
+
+
     }
 
  <div style={{textAlign:'center',color: 'white',

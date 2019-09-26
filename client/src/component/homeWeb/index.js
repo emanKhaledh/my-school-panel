@@ -16,43 +16,51 @@ class Home extends Component {
        url:'',
        result:[],
        resultStatus:'',
-       msg:''
- 
+       msg:'',
+       button:false
       };
-  
-  
     }
 
 
   clickLink = (e)=>{
-this.setState({url:e.target.value},()=>{
+    if(e.target.value.includes('Subject')){
+      this.setState({url:e.target.value,button:true},()=>{
+        fetch(`/api/${this.state.url}`, {
+          credentials: 'same-origin',
+          method: 'GET',
+        }).then(res=>res.json())
+          .then((res) => {
+            this.setState({result:res.result , resultStatus:res.ok,msg:res.msg})
+          })
+          .catch((err)=> {
+            console.log("error",err);
+          });
+      })
+    }else{
+this.setState({url:e.target.value,button:false},()=>{
   fetch(`/api/${this.state.url}`, {
     credentials: 'same-origin',
     method: 'GET',
   }).then(res=>res.json())
     .then((res) => {
-
       this.setState({result:res.result , resultStatus:res.ok,msg:res.msg})
-
     })
     .catch((err)=> {
-    
       console.log("error",err);
-      
     });
 })
+    }
+  }
+  clickLinkSection = () =>{
+    this.setState({button:true})
   }
 
     render() {
       // className="  page-wrapper bg-gra-02  font-poppins"red
-    return (  <div >
-
-     
-
-
+    return (<div >
   <div className="containerWeb">
     <div className="topnavWeb">
-    <button onClick={this.clickLink} value="radioSubject">
+    <button onClick={this.clickLinkSection} value="radioSubject">
   الاذاعة المدرسية
   </button>
 
@@ -91,21 +99,24 @@ this.setState({url:e.target.value},()=>{
 
  
   </div>
-  <div className="containerWeb1">
-      {/* <div className="bg-imgWeb"> */}
-<img  src={imageCover} alt="dddddddddddddd" style={{width:'100%'}}/>
+  <div className="containerWeb1">    
+   <img  src={imageCover} alt="dddddddddddddd" style={{width:'100%'}}/>
+  <div className="content">
+  {this.state.button && <div className="buttonSection">
+    <button onClick={this.clickLink} value="radioSubject/1">
+  الفصل الدراسي الأول
+  </button>
 
-  <div class="content">
+  <button onClick={this.clickLink} value="radioSubject/2">
+  الفصل الدراسي الثاني
+  </button>
+  </div>}
   <div style={{textAlign: 'center',
     color: '#f2f2f2'}}> <h1>المواضيع</h1></div>
 {this.state.url && <Result  result={this.state.result} resultStatus={this.state.resultStatus} msg={this.state.msg}/>}
 </div>
-
 </div>
-{/* </div> */}
-     
-       
-        </div>);
+</div>);
     }
   }
 

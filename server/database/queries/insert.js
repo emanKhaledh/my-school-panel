@@ -1,9 +1,9 @@
 const connection = require('./../db_connection');
 
-const radioInsert = (titel, description,url,cb) => {
+const radioInsert = (titel, description,url,nosection,cb) => {
   const sql = {
-    text: 'INSERT INTO radio(title, description,link) VALUES($1,$2,$3) RETURNING *',
-    values: [titel, description,url],
+    text: 'INSERT INTO radio(title, description,link,nosection) VALUES($1,$2,$3,$4) RETURNING *',
+    values: [titel, description,url,nosection],
   };
   connection.query(sql, (err, res) => {
     if (err) cb(err);
